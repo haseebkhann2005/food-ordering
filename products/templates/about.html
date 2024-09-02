@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block food %}
+<section class="about-us">
+    <div class="container">
+        <div class="about-header">
+            <h1>About Us</h1>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Welcome to FoodExpress, where we believe that food should not only be delicious but also accessible to everyone. Our mission is to deliver mouth-watering meals directly to your doorstep, prepared with the freshest ingredients and a lot of love.
+                </p>
+                <p>
+                    Founded in 2024, FoodExpress has quickly become a favorite among food lovers. We are passionate about offering a diverse menu that caters to all tastes, whether you’re craving something hearty, healthy, or a bit of both.
+                </p>
+                <p>
+                    Our team is dedicated to ensuring that every meal is a memorable experience. We work tirelessly to source the best ingredients, create exciting new dishes, and deliver them with exceptional service.
+                </p>
+                <p>
+                    Thank you for choosing FoodExpress. We look forward to serving you and making your food experience truly exceptional.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'images/about1.jpg' %}" alt="About FoodExpress">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

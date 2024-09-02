@@ -1,0 +1,1174 @@
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #2c2c2c;
+    line-height: 1.6;
+    }
+
+
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b5e20; /* Dark green */
+    padding: 20px;
+    position: relative; /* Needed for positioning the hamburger menu */
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-logo img {
+    height: 50px; /* Adjust height based on your logo size */
+    margin-right: 10px; /* Space between logo image and text */
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu .bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #76ff03; /* Light green */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
+        width: 100%;
+        background-color: #1b5e20; /* Dark green */
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .navbar-menu li {
+        margin: 15px 0; /* Space between items on mobile */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu on mobile */
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #1c1c1c;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: #8dc63f;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.order-now {
+    padding: 10px 30px;
+    background-color: #8dc63f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.order-now:hover {
+    background-color: #76a82a;
+}
+/* Featured Section Styles */
+.featured-section {
+    padding: 50px 20px;
+    background-color: #333;
+}
+
+.featured-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #8dc63f;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minimum width for better responsiveness */
+    gap: 20px;
+}
+
+.dish-card {
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced evenly */
+    height: 350px; /* Fixed height for consistency */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: adds shadow for better card visibility */
+}
+
+.dish-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 10px;
+}
+
+.dish-card h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #8dc63f;
+}
+
+
+/* About Us Section Styles */
+.about-section {
+    padding: 50px 20px;
+    background-color: #1c1c1c;
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #8dc63f;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+/* Footer Section Styles */
+.footer-section {
+    background-color: #1c1c1c;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    flex: 1 1 300px;
+    margin: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #8dc63f;
+}
+
+.footer-about p,
+.footer-contact p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #8dc63f;
+    font-size: 1.2rem;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin-right: 10px;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    font-size: 1.1rem;
+    color: #bbb;
+}
+/* Contact Us Page Styles */
+/* Contact Us Page Styles */
+.contact-us {
+    padding: 50px 20px;
+    background-color: #1b5e20; /* Dark green */
+    color: #fff;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: black; /* Slightly lighter green for form background */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form elements horizontally */
+    text-align: center; /* Center text inside the form */
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.form-group {
+    width: 100%; /* Make sure form-group takes full width */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: center; /* Center label and input horizontally */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Full width to fit inside the container */
+    max-width: 500px; /* Limit max-width for better appearance */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #76ff03; /* Light green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add space above button */
+}
+
+button:hover {
+    background-color: #66cc00; /* Darker green */
+}
+
+.contact-map {
+    flex: 1;
+    background-color: black; /* Slightly lighter green for map background */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 5px;
+}
+/* About Us Page Styles */
+.about-us {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+/* Blog Page Styles */
+.blog-section {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 30px;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.blog-post {
+    background-color: #2b2b2b; /* Slightly lighter dark background for posts */
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    font-size: 1.8rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 15px;
+}
+
+.blog-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 10px 15px
+}
+/* Ensure that styles for the menu page are scoped to its container */
+
+/* Menu Page Specific Styles */
+.menu-page {
+    background-color: #1c1c1c; /* Dark background for the menu page */
+    color: #fff; /* White text for readability */
+    padding: 60px 20px;
+}
+
+.menu-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-page .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 50px;
+    font-weight: bold; /* Added for emphasis */
+}
+
+.menu-page .menu-category {
+    margin-bottom: 50px;
+}
+
+.menu-page .category-title {
+    font-size: 2.5rem;
+    color: #8dc63f; /* Light green for category titles */
+    border-bottom: 3px solid #8dc63f; /* Thicker border for emphasis */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: bold; /* Added for emphasis */
+}
+
+.menu-page .menu-items {
+    display: grid;
+    width: 20%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.menu-page .menu-item {
+    background-color: #2b2b2b; /* Slightly lighter dark background for items */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-page .item-image img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.menu-page .item-name {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold; /* Added for emphasis */
+    margin-top: 10px;
+}
+
+.menu-page .item-description {
+    font-size: 1rem;
+    color: #bbb;
+    margin: 10px 0;
+    line-height: 1.5; /* Improved readability */
+}
+
+.menu-page .item-price {
+    font-size: 1.5rem;
+    color: #8dc63f; /* Light green for prices */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.menu-page .purchase-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8dc63f; /* Light green background */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.menu-page .purchase-button:hover {
+    background-color: #76b945; /* Darker green on hover */
+}
+
+.menu-page .not-available {
+    color: #ff4d4d; /* Red color for not available items */
+    font-weight: bold;
+}
+/* Messages Container */
+.message-container {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific Message Types */
+.message-success {
+    background-color: #28a745;
+    border-left: 8px solid #1e7e34;
+}
+
+.message-error {
+    background-color: #dc3545;
+    border-left: 8px solid #c82333;
+}
+
+.message-info {
+    background-color: #17a2b8;
+    border-left: 8px solid #117a8b;
+}
+
+.message-warning {
+    background-color: #ffc107;
+    border-left: 8px solid #d39e00;
+    color: #856404;
+}
+
+/* Close Button */
+.message-container .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.message-container .close:hover {
+    color: #000;
+}
+
+
+/* Healthy Tips Page Styles */
+.tips-section {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 50px;
+}
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tip-item {
+    padding: 20px;
+    background-color: #2b2b2b; /* Slightly lighter dark background for items */
+    border-left: 5px solid #8dc63f; /* Light green accent border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tip-title {
+    font-size: 2rem;
+    color: #8dc63f; /* Light green for tip titles */
+    margin-bottom: 10px;
+}
+
+.tip-description {
+    font-size: 1.2rem;
+    color: #bbb; /* Lighter color for descriptions */
+    line-height: 1.5;
+}
+/* Top 5 Cuisines Page Styles */
+.cuisines-section {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 50px;
+}
+
+.cuisines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cuisine-item {
+    display: flex;
+    align-items: center;
+    background-color: #2b2b2b; /* Slightly lighter dark background for items */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cuisine-image {
+    width: 40%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.cuisine-content {
+    padding: 20px;
+    width: 60%;
+}
+
+.cuisine-title {
+    font-size: 2rem;
+    color: #8dc63f; /* Light green for cuisine titles */
+    margin-bottom: 10px;
+}
+
+.cuisine-description {
+    font-size: 1.2rem;
+    color: #bbb; /* Lighter color for descriptions */
+    line-height: 1.5;
+}
+/* Meal Planning Guide Page Styles */
+.meal-planning-section {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 40px;
+}
+
+.intro {
+    font-size: 1.2rem;
+    color: #bbb; /* Lighter color for intro text */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.guide {
+    font-size: 1.1rem;
+    color: #ccc; /* Light color for guide text */
+    line-height: 1.7;
+}
+
+.guide-title {
+    font-size: 2rem;
+    color: #8dc63f; /* Light green for guide titles */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.guide p {
+    margin-bottom: 20px;
+}
+/* Meal Page Styles */
+.meal-page {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.meal-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meal-page .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 40px;
+}
+
+.meal-page .add-meal-form {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /* Ensure the form is not part of the grid layout */
+}
+
+.meal-page .form-group {
+    margin-bottom: 20px;
+}
+
+.meal-page .form-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #8dc63f; /* Light green for labels */
+}
+
+.meal-page .form-group input,
+.meal-page .form-group textarea,
+.meal-page .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+}
+
+.meal-page .form-group input::placeholder,
+.meal-page .form-group textarea::placeholder {
+    color: #bbb; /* Lighter color for placeholder text */
+}
+
+.meal-page .form-group select {
+    appearance: none;
+    width: 200px;
+}
+
+.meal-page button {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #8dc63f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.meal-page button:hover {
+    background-color: #76a028;
+}
+
+.meal-page .meal-grid {
+    display: grid; /* Apply grid layout to meal cards */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.meal-page .meal-card {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margin for grid alignment */
+}
+
+.meal-page .category-title {
+    font-size: 1.8rem;
+    color: #8dc63f; /* Light green for category titles */
+    margin-bottom: 10px;
+}
+
+
+
+.meal-page .meal-card .category-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 3px solid #8dc63f; /* Light green border at the bottom */
+}
+/* Meal Card Description Styles */
+.meal-card .category-description {
+    position: relative;
+    max-height: 43px; /* Adjust height as needed */
+    overflow: hidden;
+    line-height: 1.5;
+    transition: max-height 1s ease;
+}
+
+.meal-card .more-text {
+    display: block;
+}
+
+.meal-card .toggle-checkbox {
+    display: none;
+}
+
+.meal-card .read-more-label {
+    display: block;
+    margin-top: 10px;
+    color: #8dc63f; /* Light green for read more label */
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.meal-card .read-more-label:hover {
+    color: #76a028; /* Darker green on hover */
+}
+
+/* Show more text when checkbox is checked */
+.meal-card .toggle-checkbox:checked ~ .category-description {
+    max-height: none; /* Show full height */
+}
+
+.meal-card .toggle-checkbox:checked ~ .read-more-label {
+    content: "Read Less";
+}
+/* Review Page Styles */
+.review-page {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.review-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-page .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 40px;
+}
+
+.review-page .add-review-form-container {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.review-page .form-group {
+    margin-bottom: 20px;
+}
+
+.review-page .form-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #8dc63f; /* Light green for labels */
+}
+
+.review-page .form-group input,
+.review-page .form-group textarea,
+.review-page .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+}
+
+.review-page .form-group input::placeholder,
+.review-page .form-group textarea::placeholder {
+    color: #bbb; /* Lighter color for placeholder text */
+}
+
+.review-page .form-group select {
+    appearance: none;
+    width: 200px;
+}
+
+.review-page button {
+    display: block;
+    margin-left: 462px;
+    width: 20%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #8dc63f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-page button:hover {
+    background-color: #76a028;
+}
+
+/* Review Cards Grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual Review Card */
+.review-card {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.review-card .reviewer-name {
+    font-size: 1.8rem;
+    color: #8dc63f; /* Light green for reviewer name */
+    margin-bottom: 10px;
+}
+
+.review-card .rating-stars {
+    margin-bottom: 10px;
+}
+
+.review-card .rating-stars .star {
+    font-size: 1.5rem;
+    color: #8dc63f; /* Light green for filled stars */
+}
+
+.review-card .rating-stars .star.filled {
+    color: #8dc63f; /* Light green for filled stars */
+}
+
+.review-card .review-text {
+    font-size: 1.2rem;
+    color: #bbb; /* Lighter color for review text */
+    line-height: 1.5;
+}
+/* Reviews Page Styles */
+.reviews-page {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.reviews-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviews-page .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 40px;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+.reviewer-name {
+    font-size: 1.8rem;
+    color: #8dc63f;
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #f7b500; /* Yellow color for stars */
+}
+
+.empty-star {
+    color: #ccc; /* Light grey for empty stars */
+}
+
+.review-text {
+    font-size: 1.2rem;
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.review-date {
+    font-size: 0.9rem;
+    color: #777;
+}
+/* Form Container */
+.add-blog-post {
+    background-color: #2e2e2e; /* Dark background for form container */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.add-blog-post h2 {
+    color: #4CAF50; /* Green color for form title */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #e6e6e6; /* Light text color */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Form Control (input, textarea) */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4CAF50; /* Green border */
+    border-radius: 5px;
+    background-color: #3d3d3d; /* Darker background for inputs */
+    color: #e6e6e6; /* Light text color */
+    font-size: 1em;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: #66bb6a; /* Lighter green border on focus */
+    box-shadow: 0 0 8px #4CAF50; /* Green shadow on focus */
+}
+
+/* Form Control File Input */
+.form-control-file {
+    display: block;
+    margin-top: 10px;
+    color: #e6e6e6; /* Light text color */
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Green background for button */
+    border: none;
+    border-radius: 5px;
+    color: #e6e6e6; /* Light text color */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #66bb6a; /* Lighter green on hover */
+}
+
+/* Additional Styling */
+textarea.form-control {
+    resize: vertical;
+}

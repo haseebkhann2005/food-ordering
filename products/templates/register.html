@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- Link to your CSS file -->
+</head>
+<body class="loading-screen" style="background-image: url('{% static 'images/background1.png' %}'); background-size: cover; height: 100vh; background-position: center; background-repeat: no-repeat;">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="{% static 'images/loading.gif' %}" alt="Loading...">
+    </div>
+
+    <!-- Your main content -->
+    <div id="main-content" style="display: none;">
+        <div class="auth-container">
+            <!-- Display alert messages -->
+            {% if messages %}
+                <div class="alert-container">
+                    {% for message in messages %}
+                        <div class="alert {{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            <h1 class="auth-title">Don't have an account? Register here</h1>
+            <form action="{% url 'p_register' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <div class="column">
+                        <label for="f_name">First Name</label>
+                        <input type="text" id="f_name" name="f_name" required>
+                    </div>
+                    <div class="column">
+                        <label for="l_name">Last Name</label>
+                        <input type="text" id="l_name" name="l_name" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Register</button>
+            </form>
+            <p class="auth-link">Already have an account? <a href="{% url 'p_login' %}" style="color: #32cd32;">Login here</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Remove the loading screen once the page is fully loaded
+        window.addEventListener('load', function() {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            document.body.classList.remove('loading');
+        });
+    </script>
+</body>
+</html>

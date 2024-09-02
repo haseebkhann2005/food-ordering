@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-qzvy^hua6fjn28cq72&ms(q^quq_(^qa7zz#b!kor!htp5#9gp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.10.7',
+    '127.0.0.1',
+    'localhost:8000',
+     ]
 
 
 # Application definition
@@ -39,8 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 EXTERNAL_APPS = [
-    'products'
+    'products',
+    'accounts',
+    'social_django',
+    'django.contrib.sites', 
+    
 ]
+SITE_ID = 1  # Add this if not already present
 INSTALLED_APPS += EXTERNAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,6 +95,12 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.github.GithubOAuth2',
+    
+)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,3 +139,30 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+STATICFILES_DIR = {
+    os.path.join(BASE_DIR,'public/static')
+}
+MEDIA_ROOT = os.path.join(BASE_DIR,'public/static')
+MEDIA_URL = '/media/'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "rookiehaseeb2005@gmail.com"
+EMAIL_HOST_PASSWORD = "xcwc abcq gfdj chmd"
+DEFAULT_FROM_EMAIL = 'rookiehaseeb2005@gmail.com'
+LOGIN_URL = '/login/'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+LOGIN_URL = '/login/'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'  # Redirect after successful login
+LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
+SOCIAL_AUTH_GITHUB_KEY = 'Ov23lizpzYwzFqb75Yvb'
+SOCIAL_AUTH_GITHUB_SECRET = 'c8a60636f1ed077da60bdf344e5f64b1dd4caa63'

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Food Express</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 0;
+        }
+        a{
+            color:white;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #4CAF50;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Welcome to Food Express! 🎉</h1>
+        </div>
+        <div class="content">
+            <img src="{% static 'images/50867 [Converted].dxf' %}" alt="Welcome to Food Express">
+            <h2>Dear {{ first_name }},</h2>
+            <p>We are <strong>thrilled</strong> to have you join the Food Express family! 🍽️🎉</p>
+            <p>As a new member of our community, you now have access to the finest selection of meals from your favorite restaurants delivered right to your door. Whether you're craving a gourmet dinner or a quick bite, Food Express has got you covered!</p>
+            <p>Here's what you can look forward to:</p>
+            <ul>
+                <li><strong>Exclusive Deals:</strong> Enjoy special discounts and offers on a variety of dishes.</li>
+                <li><strong>Seamless Ordering:</strong> Experience a user-friendly interface to order your meals effortlessly.</li>
+                <li><strong>Fast Delivery:</strong> Get your food delivered hot and fresh, right on time.</li>
+                <li><strong>Personalized Recommendations:</strong> Discover new dishes tailored to your taste preferences.</li>
+            </ul>
+            <p>To get started, simply <a href="https://yourwebsite.com" class="button">Explore Our Menu</a> and place your first order.<br><br> We promise it will be a delightful experience!</p>
+            <p>Our customer support team is here for you. If you have any questions or need assistance, feel free to reach out to us at <a href="mailto:rookiehaseeb2005@gmail.com">rookiehaseeb2005@gmail.com</a>. We're always here to help!</p>
+            <p>Once again, welcome to Food Express. We’re excited to serve you!</p>
+            <p>Warm regards,<br>
+            The Food Express Team</p>
+        </div>
+        <div class="footer">
+            <p>🌐 <a href="https://yourwebsite.com">Visit our website</a></p>
+        </div>
+    </div>
+</body>
+</html>

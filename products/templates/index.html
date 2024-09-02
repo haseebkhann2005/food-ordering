@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block food %}
+ <!-- Hero Section -->
+<header class="hero-section" >
+    <div class="hero-content"  >
+        <h1>Welcome to FoodExpress {{request.user.first_name}}</h1>
+        <p>Your one-stop destination for delicious meals</p>
+        <a href="/menu" class="order-now">Order Now</a>
+    </div>
+</header>
+
+
+<!-- Featured Section -->
+<section id="menu" class="featured-section">
+    <center>
+    <h2 style="background-color:#1b5e20;width:420px;">Our Featured Dishes</h2>
+    </center>
+    <div class="dishes-grid">
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="{% static 'images/dish1.jpg' %}" alt="Grilled Chicken">
+            </div>
+            <div class="dish-info">
+                <h3>Grilled Chicken</h3>
+                <p>Our Grilled Chicken is marinated in a blend of herbs and spices, then grilled to perfection. Served with a side of roasted vegetables and a light garlic sauce.</p>
+               
+            </div>
+        </div>
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="{% static 'images/dish2.jpg' %}" alt="Vegetarian Pizza">
+            </div>
+            <div class="dish-info">
+                <h3>Vegetarian Pizza</h3>
+                <p>This Vegetarian Pizza is loaded with fresh vegetables, including bell peppers, onions, olives, and tomatoes, all topped with melted mozzarella cheese and a rich tomato sauce.</p>
+                
+            </div>
+        </div>
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="{% static 'images/dish3.jpg' %}" alt="Spicy Tacos">
+            </div>
+            <div class="dish-info">
+                <h3>Spicy Tacos</h3>
+                <p>Experience the heat with our Spicy Tacos! These tacos are filled with seasoned ground beef, fresh lettuce, cheese, and topped with our special spicy salsa.</p>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- About Us Section -->
+<section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>At FoodExpress, we are passionate about delivering fresh, tasty, and healthy meals right to your doorstep. Our chefs use only the finest ingredients to prepare a variety of dishes that cater to all tastes.</p>
+</section>
+{% endblock %}

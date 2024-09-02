@@ -1,0 +1,1335 @@
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #2c2c2c;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    }
+    
+    /* Style for the loading screen */
+    #loading-screen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Ensure it stays on top */
+    }
+
+    /* Optional: Style to hide the scrollbar while loading */
+    body.loading {
+        overflow: hidden;
+    }
+
+
+/* Navbar Styles */
+.navbar {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; /* Dark green */
+   
+    position: relative; /* Needed for positioning the hamburger menu */
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    
+    background-color: rgb(239, 232, 232);
+    width: 100%;
+    position: relative;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    background: none;
+}
+
+.navbar-logo img {
+    height: 70px; /* Adjust height based on your logo size */
+    margin-right: 10px;
+    margin-left: 10px; /* Space between logo image and text */
+    
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu .bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin-left: 330px;
+    padding: 0;
+}
+.navbar-menu button{
+    border-radius: 20px;
+    margin: 3px;
+    background-color: #1b5e20;
+    
+    
+}
+
+.navbar-menu li {
+   color: white;
+   margin-left: 15px;
+}
+
+.navbar-menu a {
+    color: #e9dddd;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 20px;
+    
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #76ff03; /* Light green */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
+        width: 100%;
+        background-color: #1b5e20; /* Dark green */
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .navbar-menu li {
+        margin: 15px 0; /* Space between items on mobile */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu on mobile */
+    }
+}
+
+.hero-section {
+     /* Path to your background image */
+    background-size: cover; /* Ensures the background covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating the background image */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    color: #fff; /* White text color for contrast */
+    text-align: center; /* Centers the text within the hero section */
+    position: relative; /* Allows for potential overlay effects */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+    z-index: 1; /* Places the overlay below the content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* Large heading size */
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.order-now {
+    padding: 15px 30px;
+    background-color: #1b5e20;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.order-now:hover {
+    background-color: #219150; /* Darker green on hover */
+}
+
+/* Featured Section Styles */
+.featured-section {
+    padding: 50px 20px;
+    background-color:rgba(0, 0, 0, 0.5); /* Darker background for a more modern look */
+}
+
+.featured-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px; /* Slightly reduced margin for balance */
+    color: white; /* Slightly brighter green for better contrast */
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* Increased gap for better spacing */
+}
+
+.dish-card {
+    background-color: white; /* Darker card background to match the section */
+    border-radius: 12px; /* Slightly increased border radius for smoother edges */
+    overflow: hidden;
+    text-align: center;
+    padding: 15px; /* Increased padding for a bit more breathing space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* Slightly increased height for more content space */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Deeper shadow for a more pronounced effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+}
+
+.dish-card:hover {
+    transform: translateY(-10px); /* Lift the card slightly on hover */
+    box-shadow: 0 10px 20px rgba(1, 243, 73, 0.4); /* Intensify shadow on hover */
+}
+
+.dish-card img {
+    width: 100%;
+    height: 220px; /* Slightly increased height for images */
+    object-fit: cover;
+    border-radius: 8px; /* Smaller border radius for the image */
+    transition: transform 0.5s ease; /* Added smooth rotation effect on hover */
+}
+
+
+
+.dish-card h3 {
+    margin-top: 20px; /* Increased margin for spacing */
+    font-size: 1.6rem; /* Slightly larger font size */
+    color: #07e307;
+}
+
+.dish-info {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for text appearance */
+    transform: translateY(10px); /* Initial offset for a slight lift effect */
+}
+
+.dish-card:hover .dish-info {
+    opacity: 1;
+    transform: translateY(0); /* Reset the transform on hover */
+}
+
+.dish-info p {
+    font-size: 1rem;
+    color: #000; /* Light text color for readability */
+    margin: 10px 0;
+}
+
+
+
+/* About Us Section Styles */
+.about-section {
+    padding: 50px 20px;
+    background-color: rgb(239, 232, 232);
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #3f630c;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: #000;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+/* Footer Section Styles */
+.footer-section {
+    background-color: rgb(239, 232, 232);
+    padding: 40px 20px;
+    color: black;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    flex: 1 1 300px;
+    margin: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #3f630d;
+}
+
+.footer-about p,
+.footer-contact p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #4c7119;
+    font-size: 1.2rem;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin-right: 10px;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    
+    border-top: 1px solid black;
+}
+
+.footer-bottom p {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: black;
+}
+/* Contact Us Page Styles */
+/* Contact Us Page Styles */
+.contact-us {
+    padding: 50px 20px;
+    /* Dark green */
+    color: #fff;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #2c3e50; /* Slightly lighter green for form background */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form elements horizontally */
+    text-align: center; /* Center text inside the form */
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.form-group {
+    width: 100%; /* Make sure form-group takes full width */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: center; /* Center label and input horizontally */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Full width to fit inside the container */
+    max-width: 500px; /* Limit max-width for better appearance */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #76ff03; /* Light green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add space above button */
+}
+
+button:hover {
+    background-color: #66cc00; /* Darker green */
+}
+
+.contact-map {
+    flex: 1;
+    background-color: #2c3e50; /* Slightly lighter green for map background */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 5px;
+}
+/* About Us Page Styles */
+.about-us {
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background for contrast */
+    color: #ffffff; /* White text for readability */
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #27ae60; /* Light green for titles */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Increased gap for better spacing */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ecf0f1; /* Light gray for readability */
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-weight: 600; /* Slightly bolder text */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-image {
+        margin-top: 20px;
+    }
+}
+
+/* Blog Page Styles */
+.blog-section {
+    padding: 60px 20px;
+    background-color: #2c3e50; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    background-color: #50555b; /* Dark background for title */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.blog-post {
+    background-color: #2b2b2b; /* Slightly lighter dark background for posts */
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    font-size: 1.8rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 15px;
+}
+
+.blog-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #8dc63f; /* Light green background */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    background-color: #7aaf3e; /* Slightly darker green on hover */
+}
+
+.blog-submission {
+    margin-top: 40px;
+}
+
+.add-blog-post {
+    background-color: #2b2b2b; /* Matching dark background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #8dc63f; /* Light green for titles */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.form-control-file {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.submit-btn {
+    background-color: #8dc63f; /* Light green background */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #7aaf3e; /* Slightly darker green on hover */
+}
+
+/* Ensure that styles for the menu page are scoped to its container */
+/* Menu Page Styles Scoped Under .menu-page */
+.menu-page {
+    background-image: none;
+    background-color: whitesmoke;
+    display: flex; /* Flexbox to arrange sidebar and content */
+}
+
+/* Sidebar Navigation */
+.menu-page .sidebar {
+    background-color: #2c3e50;
+    width: 250px;
+    padding: 20px;
+    
+    color: white;
+    position:fixed; /* Fixes the sidebar to the left */
+    top: 0;
+    bottom: 0;
+    overflow-y: auto; /* Adds scroll if content overflows */
+}
+
+.menu-page .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.menu-page .sidebar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.menu-page .sidebar nav a:hover {
+    background-color: #34495e;
+}
+
+/* Search Bar in Sidebar */
+.menu-page .search-container {
+    margin-top: 20px;
+}
+
+.menu-page .search-input {
+    padding: 10px;
+    width: calc(100% - 22px); /* Adjusts width considering padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.menu-page .search-button {
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 100%; /* Makes button full width */
+}
+
+.menu-page .search-button:hover {
+    background-color: #27ae60;
+}
+
+/* Main Content */
+.menu-page .content {
+    margin-left: 290px; /* Adds margin to accommodate the fixed sidebar */
+  
+    flex: 1; /* Takes the remaining space */
+    
+}
+
+.menu-page .hero-section {
+    background-color: #2c3e50;
+    text-align: center;
+    color: white;
+    width: 1020px;
+    
+  
+    padding: 0 20px;
+    
+}
+
+.menu-page .hero-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.menu-page .hero-subtitle {
+    font-size: 1.5rem;
+}
+
+.menu-page .message-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.menu-page .alert {
+    padding: 10px;
+    background-color: #a11818;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.menu-page .alert .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.menu-page .menu-category {
+    margin: 40px 0;
+}
+
+.menu-page .category-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Flexbox layout for menu items */
+.menu-page .menu-items {
+    display: flex;
+    flex-wrap: wrap; /* Wraps items to the next line if necessary */
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu-page .menu-item {
+    background-color: #3f3d3d;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for menu items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-page .menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-page .item-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.menu-page .item-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #d7d1d1;
+}
+
+.menu-page .item-description {
+    font-size: 0.9rem;
+    color: #bbbbbb;
+    margin-bottom: 10px;
+}
+
+.menu-page .item-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.menu-page .purchase-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.menu-page .purchase-button:hover {
+    background-color: #c0392b;
+}
+
+.menu-page .not-available {
+    font-size: 0.9rem;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+
+
+
+/* Healthy Tips Page Styles */
+.tips-section {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 50px;
+}
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tip-item {
+    padding: 20px;
+    background-color: #2b2b2b; /* Slightly lighter dark background for items */
+    border-left: 5px solid #8dc63f; /* Light green accent border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tip-title {
+    font-size: 2rem;
+    color: #8dc63f; /* Light green for tip titles */
+    margin-bottom: 10px;
+}
+
+.tip-description {
+    font-size: 1.2rem;
+    color: #bbb; /* Lighter color for descriptions */
+    line-height: 1.5;
+}
+/* Top 5 Cuisines Page Styles */
+.cuisines-section {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 50px;
+}
+
+.cuisines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cuisine-item {
+    display: flex;
+    align-items: center;
+    background-color: #2b2b2b; /* Slightly lighter dark background for items */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cuisine-image {
+    width: 40%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.cuisine-content {
+    padding: 20px;
+    width: 60%;
+}
+
+.cuisine-title {
+    font-size: 2rem;
+    color: #8dc63f; /* Light green for cuisine titles */
+    margin-bottom: 10px;
+}
+
+.cuisine-description {
+    font-size: 1.2rem;
+    color: #bbb; /* Lighter color for descriptions */
+    line-height: 1.5;
+}
+/* Meal Planning Guide Page Styles */
+.meal-planning-section {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 40px;
+}
+
+.intro {
+    font-size: 1.2rem;
+    color: #bbb; /* Lighter color for intro text */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.guide {
+    font-size: 1.1rem;
+    color: #ccc; /* Light color for guide text */
+    line-height: 1.7;
+}
+
+.guide-title {
+    font-size: 2rem;
+    color: #8dc63f; /* Light green for guide titles */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.guide p {
+    margin-bottom: 20px;
+}
+/* Meal Page Styles */
+.meal-page {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.meal-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meal-page .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 40px;
+}
+
+.meal-page .add-meal-form {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /* Ensure the form is not part of the grid layout */
+}
+
+.meal-page .form-group {
+    margin-bottom: 20px;
+}
+
+.meal-page .form-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #8dc63f; /* Light green for labels */
+}
+
+.meal-page .form-group input,
+.meal-page .form-group textarea,
+.meal-page .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+}
+
+.meal-page .form-group input::placeholder,
+.meal-page .form-group textarea::placeholder {
+    color: #bbb; /* Lighter color for placeholder text */
+}
+
+.meal-page .form-group select {
+    appearance: none;
+    width: 200px;
+}
+
+.meal-page button {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #8dc63f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.meal-page button:hover {
+    background-color: #76a028;
+}
+
+.meal-page .meal-grid {
+    display: grid; /* Apply grid layout to meal cards */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.meal-page .meal-card {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margin for grid alignment */
+}
+
+.meal-page .category-title {
+    font-size: 1.8rem;
+    color: #8dc63f; /* Light green for category titles */
+    margin-bottom: 10px;
+}
+
+
+
+.meal-page .meal-card .category-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 3px solid #8dc63f; /* Light green border at the bottom */
+}
+/* Meal Card Description Styles */
+.meal-card .category-description {
+    position: relative;
+    max-height: 43px; /* Adjust height as needed */
+    overflow: hidden;
+    line-height: 1.5;
+    transition: max-height 1s ease;
+}
+
+.meal-card .more-text {
+    display: block;
+}
+
+.meal-card .toggle-checkbox {
+    display: none;
+}
+
+.meal-card .read-more-label {
+    display: block;
+    margin-top: 10px;
+    color: #8dc63f; /* Light green for read more label */
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.meal-card .read-more-label:hover {
+    color: #76a028; /* Darker green on hover */
+}
+
+/* Show more text when checkbox is checked */
+.meal-card .toggle-checkbox:checked ~ .category-description {
+    max-height: none; /* Show full height */
+}
+
+.meal-card .toggle-checkbox:checked ~ .read-more-label {
+    content: "Read Less";
+}
+
+/* Review Page Styling */
+.review-page {
+    padding: 2rem;
+    background-color: #f9f9f9; /* Slightly different light background for better contrast */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem; /* Increased font size for emphasis */
+    color: #fff;
+    background-color: #2c3e50; /* Darker background for section titles */
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Add Review Form Container */
+.add-review-form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Add Review Form */
+.add-review-form .form-group {
+    margin-bottom: 1.5rem; /* Increased spacing */
+}
+
+.add-review-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold; /* Bold labels */
+}
+
+.add-review-form input, .add-review-form textarea, .add-review-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #2c3e50; /* Dark background for buttons */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem; /* Consistent button font size */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.submit-btn:hover {
+    background-color: #34495e; /* Darker shade for hover effect */
+}
+
+/* Review Cards Grid */
+.review-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Increased gap between cards */
+}
+
+/* Review Card */
+.review-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1.5rem; /* Increased padding */
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s; /* Smooth card hover effect */
+}
+
+.review-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.review-card .reviewer-name {
+    font-size: 1.5rem; /* Slightly larger font size */
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.review-card .review-rating {
+    margin-bottom: 0.5rem;
+}
+
+.star {
+    font-size: 1.5rem; /* Slightly larger star size */
+    color: #f39c12; /* Gold color for stars */
+}
+
+.full-star {
+    color: #f39c12; /* Gold color for full stars */
+}
+
+.empty-star {
+    color: #ccc; /* Gray color for empty stars */
+}
+
+.review-card .review-text {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.review-card .review-date {
+    font-size: 0.875rem;
+    color: #999;
+}
+
+
+/* Form Container */
+.add-blog-post {
+    background-color: #2e2e2e; /* Dark background for form container */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.add-blog-post h2 {
+    color: #4CAF50; /* Green color for form title */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #e6e6e6; /* Light text color */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Form Control (input, textarea) */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4CAF50; /* Green border */
+    border-radius: 5px;
+    background-color: #3d3d3d; /* Darker background for inputs */
+    color: #e6e6e6; /* Light text color */
+    font-size: 1em;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: #66bb6a; /* Lighter green border on focus */
+    box-shadow: 0 0 8px #4CAF50; /* Green shadow on focus */
+}
+
+/* Form Control File Input */
+.form-control-file {
+    display: block;
+    margin-top: 10px;
+    color: #e6e6e6; /* Light text color */
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Green background for button */
+    border: none;
+    border-radius: 5px;
+    color: #e6e6e6; /* Light text color */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #66bb6a; /* Lighter green on hover */
+}
+
+/* Additional Styling */
+textarea.form-control {
+    resize: vertical;
+}

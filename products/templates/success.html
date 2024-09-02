@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #e6e6e6; /* Light text */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .success-container {
+            text-align: center;
+            background-color: #2e2e2e; /* Dark container background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .success-container h1 {
+            color: #4CAF50; /* Green color for the title */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .success-container p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .success-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green button */
+            color: #e6e6e6; /* Light text */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        .success-container a:hover {
+            background-color: #66bb6a; /* Lighter green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h1>Thank You!</h1>
+        <p>Your blog post has been successfully submitted.</p>
+        <a href="{% url 'blog' %}">Go Back to Blog</a>
+    </div>
+</body>
+</html>

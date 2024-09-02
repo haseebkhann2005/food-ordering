@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block food %}
+<section class="blog-section">
+    <div class="container">
+        <h1 class="section-title">Our Blog</h1>
+
+        <!-- Existing blog posts -->
+        <div class="blog-posts">
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="{% static 'images/blog1.jpg' %}" alt="Blog Post 1">
+                </div>
+                <div class="blog-content">
+                    <h2 class="blog-title">10 Healthy Eating Tips for Busy People</h2>
+                    <p class="blog-excerpt">
+                        In today's fast-paced world, it's easy to overlook our diet. Here are ten simple tips to help you eat healthy, even on the busiest days...
+                    </p>
+                    <a href="/health-tips" target="_blank" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="{% static 'images/blog2.jpg' %}" alt="Blog Post 2">
+                </div>
+                <div class="blog-content">
+                    <h2 class="blog-title">Exploring the Flavors of the World: Top 5 Cuisines</h2>
+                    <p class="blog-excerpt">
+                        Travel the world through your taste buds! Discover the top five cuisines that every food lover should experience...
+                    </p>
+                    <a href="/top-5" target="_blank" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="blog-image">
+                    <img src="{% static 'images/blog3.jpg' %}" alt="Blog Post 3">
+                </div>
+                <div class="blog-content">
+                    <h2 class="blog-title">The Ultimate Guide to Meal Planning</h2>
+                    <p class="blog-excerpt">
+                        Meal planning can save you time, money, and stress. Here's the ultimate guide to help you get started...
+                    </p>
+                    <a href="/guide" target="_blank" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="blog-submission">
+            <h1 class="section-title">Add a blog. If we like it, we will share it with the world</h1>
+            <!-- Form to add a new blog post -->
+            <div class="add-blog-post">
+                <h2 class="form-title">Add a New Blog Post</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <!-- Title field -->
+                    <div class="form-group">
+                        <label for="id_title">Title</label>
+                        <input type="text" name="title" maxlength="200" required id="id_title" class="form-control">
+                    </div>
+    
+                    <!-- Image upload field -->
+                    <div class="form-group">
+                        <label for="id_image">Upload Image</label>
+                        <input type="file" name="image" required id="id_image" class="form-control-file">
+                    </div>
+    
+                    <!-- Excerpt field -->
+                    <div class="form-group">
+                        <label for="id_excerpt">Excerpt</label>
+                        <textarea name="excerpt" cols="40" rows="3" required id="id_excerpt" class="form-control"></textarea>
+                    </div>
+    
+                    <!-- Content field -->
+                    <div class="form-group">
+                        <label for="id_content">Content</label>
+                        <textarea name="content" cols="40" rows="10" required id="id_content" class="form-control"></textarea>
+                    </div>
+    
+                    <!-- Submit button -->
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block food %}
+<section class="cuisines-section">
+    <div class="container">
+        <h1 class="section-title">Top 5 Cuisines of the World</h1>
+
+        <!-- Cuisines List -->
+        <div class="cuisines-list">
+            <div class="cuisine-item">
+                <img src="{% static 'images/italian.jpeg' %}" alt="Italian Cuisine" class="cuisine-image">
+                <div class="cuisine-content">
+                    <h3 class="cuisine-title">1. Italian Cuisine</h3>
+                    <p class="cuisine-description">Known for its regional diversity, Italian cuisine offers a variety of flavors, featuring dishes like pasta, pizza, and risotto, all rich in olive oil, garlic, and tomatoes.</p>
+                </div>
+            </div>
+            
+            <div class="cuisine-item">
+                <img src="{% static 'images/japan.jpeg' %}" alt="Japanese Cuisine" class="cuisine-image">
+                <div class="cuisine-content">
+                    <h3 class="cuisine-title">2. Japanese Cuisine</h3>
+                    <p class="cuisine-description">Japanese cuisine emphasizes fresh ingredients, balance, and presentation, with popular dishes including sushi, ramen, and tempura, often accompanied by rice and miso soup.</p>
+                </div>
+            </div>
+            
+            <div class="cuisine-item">
+                <img src="{% static 'images/indian-cuisine.jpg' %}" alt="Indian Cuisine" class="cuisine-image">
+                <div class="cuisine-content">
+                    <h3 class="cuisine-title">3. Indian Cuisine</h3>
+                    <p class="cuisine-description">A blend of spices and herbs defines Indian cuisine, offering a vast array of dishes such as curry, biryani, and naan, each reflecting the country's rich cultural diversity.</p>
+                </div>
+            </div>
+            
+            <div class="cuisine-item">
+                <img src="{% static 'images/mexican-cuisine.jpg' %}" alt="Mexican Cuisine" class="cuisine-image">
+                <div class="cuisine-content">
+                    <h3 class="cuisine-title">4. Mexican Cuisine</h3>
+                    <p class="cuisine-description">Mexican cuisine is known for its bold flavors and vibrant colors, with staples like tacos, enchiladas, and guacamole, often featuring ingredients like beans, chili peppers, and corn.</p>
+                </div>
+            </div>
+            
+            <div class="cuisine-item">
+                <img src="{% static 'images/french-cuisine.jpg' %}" alt="French Cuisine" class="cuisine-image">
+                <div class="cuisine-content">
+                    <h3 class="cuisine-title">5. French Cuisine</h3>
+                    <p class="cuisine-description">French cuisine is celebrated for its finesse and variety, with iconic dishes like croissants, escargot, and coq au vin, emphasizing quality ingredients and meticulous preparation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

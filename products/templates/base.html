@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Food Ordering</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    
+</head>
+<body class="loading" style="background-image: url('{% static 'images/hero-bg.png' %}');">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="{% static 'images/loading.gif' %}" alt="Loading...">
+    </div>
+      <!-- Your main content -->
+      <div id="main-content" style="display: none;">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a href="/" class="navbar-logo">
+                <img src="{% static 'images/logo.png' %}" alt="FoodExpress Logo">
+                FoodExpress
+            </a>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-menu" id="navbarMenu">
+                
+             <li><a href="/"><img src={% static "images/home-i.png" %} width="60px"></a></li>
+            <li><a href="/about"><img src={% static "images/about-i.png" %} width="60px"></a></li></button>
+            <li><a href="/menu"><img src={% static "images/menu-i.png" %} width="60px"></a></li></button>
+            <li><a href="/contact"><img src={% static "images/cont-i.png" %} width="60px"></a></li>    
+            <li><a href="/blog"><img src={% static "images/blog-i.png" %} width="60px"></a></li> 
+            <li><a href="/add-meal"><img src={% static "images/add-i.png" %} width="60px"></a></li>
+            <li><a href="/reviews"><img src={% static "images/review-i.png" %} width="60px"></a></li> 
+            <li align="center"><a href="{% url 'p_login' %}"><img src={% static "images/out-i.png" %} width="60px"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+   {% block food %}
+   {% endblock  %}
+    
+
+    <!-- Footer -->
+    <!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>About FoodExpress</h3>
+            <p>FoodExpress is your go-to platform for delicious meals delivered to your doorstep. We believe in quality, taste, and service.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <a href="mailto:abdulhaseebk2005@gmail.com" style="color:green"><p style="color:black" >Email: abdulhaseebk2005@gmail.com</p></a>
+            <a href="tel:+923120496409"  style="color:green"><p style="color:black">Phone: +92 312 049 6409</p></a>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100068386969987" target="_blank"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a>
+                <a href="https://x.com/haseebk2005"target="_blank"><img src="{% static 'images/twitter.png' %}" alt="Twitter"></a>
+                <a href="https://www.instagram.com/hxeeb_khan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="{% static 'images/instagram.png' %}" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 FoodExpress. All rights reserved.</p>
+    </div>
+</div>
+</footer>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('navbarMenu');
+        menu.classList.toggle('active');
+    }
+    
+     // Remove the loading screen once the page is fully loaded
+    window.addEventListener('load', function() {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        document.body.classList.remove('loading');
+    });
+   
+   
+    
+</script>
+</body>
+</html>

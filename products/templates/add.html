@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block food %}
+
+<section class="meal-page">
+    <div class="container">
+        
+        <h2 class="section-title">Add a New Meal</h2>
+        <h4 align="center">Add meals and tell the world about what you eat. Tell them about your traditions and culture.</h4>
+        <!-- Form Container -->
+        <div class="add-meal-form-container">
+            <form class="add-meal-form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="meal-name">Meal Name:</label>
+                    <input type="text" id="meal-name" name="name" placeholder="Enter meal name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Enter meal description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="meal-image">Meal Image:</label>
+                    <input type="file" id="meal-image" name="image" required>
+                </div>
+                <div class="form-group">
+                    <label for="cooking-technique">Cooking Technique:</label>
+                    <select id="cooking-technique" name="category" required>
+                        <option value="grilling">Grilling</option>
+                        <option value="boiling">Boiling</option>
+                        <option value="frying">Frying</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit">Add Meal</button>
+            </form>
+        </div>
+
+        <!-- Meal Cards Grid -->
+        <div class="meal-grid">
+            {% for i in queryset %}
+            <div class="meal-card">
+                <div class="category-image">
+                    <img src="/media/{{i.image}}" alt="Sample Meal Image" style="height:250px">
+                </div>
+                <h3 class="category-title">{{i.name}}</h3>
+                
+                <!-- Description with Read More Toggle -->
+                <input type="checkbox" id="toggle-{{i.id}}" class="toggle-checkbox">
+                <label for="toggle-{{i.id}}" class="read-more-label">Read Full Description</label>
+                
+                <p class="category-description">
+                    {{i.description|slice:":10"}}
+                    <span class="more-text">{{i.description|slice:"10:"}}</span>
+                </p>
+                <hr>
+                
+                <p class="cooking-technique">Cooking Technique: {{i.cattegory}}</p>
+                <a href="/delete-meal/{{i.id}}">
+                    <img src="{% static "images/del.png" %}" style="width:50px;height:50px">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
