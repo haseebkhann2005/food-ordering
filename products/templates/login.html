@@ -1,64 +1,74 @@
-{% load static %} 
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}"> <!-- Link to your CSS file -->
 </head>
-<body class="loading-screen" style="background-image: url('{% static 'images/background1.png' %}'); background-size: cover; height: 100vh; background-position: center;
-    background-repeat: no-repeat;">
-     <!-- Loading Screen -->
-     <div id="loading-screen">
+<body class="loading-screen" style="background-image: url('{% static 'images/background1.png' %}'); background-size: cover; height: 100vh; background-position: center; background-repeat: no-repeat;">
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
         <img src="{% static 'images/loading.gif' %}" alt="Loading...">
     </div>
-     <!-- Your main content -->
-     <div id="main-content" style="display: none;">
-    <div class="auth-container">
-        
-                <!-- Display alert messages -->
-                {% if messages %}
-                <div class="alert-container">
-                    {% for message in messages %}
-                        <div class="alert {{ message.tags }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        <h1 class="auth-title">Welcome to food express login</h1>
-        <form action="{% url 'p_login' %}" method="POST"> <!-- Updated action URL -->
-            {% csrf_token %}
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" value="" autocomplete="off" placeholder="Enter username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" value="" autocomplete="off" placeholder="Enter password" required>
-            </div>
-            <button type="submit" class="auth-button">Login</button>
-        </form>
-        <button class="social-login">
-            <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a>    
-        </button>
-        <p class="auth-link">Don't have an account? <a href="{% url 'p_register' %}" style="color:green">Register here</a></p>
-    </div>
-</div>
-    
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('username').value = '';
-        document.getElementById('password').value = '';
-    });
-     // Remove the loading screen once the page is fully loaded
-     window.addEventListener('load', function() {
-        document.getElementById('loading-screen').style.display = 'none';
-        document.getElementById('main-content').style.display = 'block';
-        document.body.classList.remove('loading');
-    });
-</script>
 
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <div class="auth-container">
+            
+            <!-- Display alert messages -->
+            {% if messages %}
+            <div class="alert-container">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <h1 class="auth-title">Welcome to Food Express Login</h1>
+            
+            <form action="{% url 'p_login' %}" method="POST"> <!-- Updated action URL -->
+                {% csrf_token %}
+                
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="" autocomplete="off" placeholder="Enter username" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" value="" autocomplete="off" placeholder="Enter password" required>
+                </div>
+                
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <br>
+        <center>
+            <div class="social-login-container">
+                <a href="{% url 'social:begin' 'github' %}" class="social-login">Login with GitHub</a>
+            </div>
+            <br>
+            <p class="register-link">Don't have an account? <a href="{% url 'p_register' %}" class="auth-link">Register here</a></p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Clear the input fields on load
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        });
+        
+        // Remove the loading screen once the page is fully loaded
+        window.addEventListener('load', function() {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            document.body.classList.remove('loading');
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,144 @@
+/* Meal Page Styles */
+.meal-page {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background to match the theme */
+    color: #fff; /* White text for readability */
+}
+
+.meal-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meal-page .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8dc63f; /* Light green for titles */
+    margin-bottom: 40px;
+}
+
+.meal-page .add-meal-form {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /* Ensure the form is not part of the grid layout */
+}
+
+.meal-page .form-group {
+    margin-bottom: 20px;
+}
+
+.meal-page .form-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #8dc63f; /* Light green for labels */
+}
+
+.meal-page .form-group input,
+.meal-page .form-group textarea,
+.meal-page .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #fff;
+}
+
+.meal-page .form-group input::placeholder,
+.meal-page .form-group textarea::placeholder {
+    color: #bbb; /* Lighter color for placeholder text */
+}
+
+.meal-page .form-group select {
+    appearance: none;
+    width: 200px;
+}
+
+.meal-page button {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #8dc63f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.meal-page button:hover {
+    background-color: #76a028;
+}
+
+.meal-page .meal-grid {
+    display: grid; /* Apply grid layout to meal cards */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.meal-page .meal-card {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margin for grid alignment */
+}
+
+.meal-page .category-title {
+    font-size: 1.8rem;
+    color: #8dc63f; /* Light green for category titles */
+    margin-bottom: 10px;
+}
+
+
+
+.meal-page .meal-card .category-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 3px solid #8dc63f; /* Light green border at the bottom */
+}
+/* Meal Card Description Styles */
+.meal-card .category-description {
+    position: relative;
+    max-height: 43px; /* Adjust height as needed */
+    overflow: hidden;
+    line-height: 1.5;
+    transition: max-height 1s ease;
+}
+
+.meal-card .more-text {
+    display: block;
+}
+
+.meal-card .toggle-checkbox {
+    display: none;
+}
+
+.meal-card .read-more-label {
+    display: block;
+    margin-top: 10px;
+    color: #8dc63f; /* Light green for read more label */
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.meal-card .read-more-label:hover {
+    color: #76a028; /* Darker green on hover */
+}
+
+/* Show more text when checkbox is checked */
+.meal-card .toggle-checkbox:checked ~ .category-description {
+    max-height: none; /* Show full height */
+}
+
+.meal-card .toggle-checkbox:checked ~ .read-more-label {
+    content: "Read Less";
+}

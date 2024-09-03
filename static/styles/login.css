@@ -1,0 +1,272 @@
+/* General styling */
+
+
+/* Style for the loading screen */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+/* Desktop styling */
+@media (min-width: 769px) {
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: #1c1c1c;
+        color: #f4f4f4;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        /* justify-content: center;
+        align-items: center; */
+    }
+    .auth-container {
+        background-color:  rgba(0, 0, 0, 0.5);
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        max-width: 600px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .auth-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .auth-title {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        color: #b3ffab;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .input-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #f4f4f4;
+        font-weight: 500;
+    }
+
+    .input-group input {
+        
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background-color: #333;
+        color: #fff;
+        transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+        border-color: #28a745;
+        outline: none;
+    }
+
+    .auth-button {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #28a745, #32cd32);
+        color: #fff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .auth-button:hover {
+        background: linear-gradient(135deg, #32cd32, #28a745);
+    }
+
+    .auth-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #a0d468;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .auth-link:hover {
+        color: #32cd32;
+    }
+
+    .alert {
+        font-size: 1.2rem;
+        padding: 1.2rem;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .alert:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .social-login {
+        width: 100%;
+        margin: 1.5rem 0 0 0;
+        padding: 0.8rem;
+        background-color: #333;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .social-login:hover {
+        background-color: #555;
+    }
+}
+
+/* Mobile styling */
+@media (max-width: 768px) {
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: #1c1c1c;
+        color: #f4f4f4;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body {
+        background: #1c1c1c;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .auth-container {
+        background-color:  rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        width: 90%;
+        margin-top: 5vh;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .auth-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #b3ffab;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .input-group {
+        margin-bottom: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+        color: #f4f4f4;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background-color: #333;
+        color: #fff;
+        transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+        border-color: #28a745;
+        outline: none;
+    }
+
+    .auth-button {
+        width: 100%;
+        padding: 0.9rem;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #28a745, #32cd32);
+        color: #fff;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .auth-button:hover {
+        background: linear-gradient(135deg, #32cd32, #28a745);
+    }
+
+    .auth-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #a0d468;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .auth-link:hover {
+        color: #32cd32;
+    }
+
+    .alert {
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .alert:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .social-login {
+        width: 100%;
+        margin: 1.5rem 0 0 0;
+        padding: 0.8rem;
+        background-color: #333;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .social-login:hover {
+        background-color: #555;
+    }
+}

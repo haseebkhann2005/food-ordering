@@ -1,0 +1,208 @@
+/* Ensure that styles for the menu page are scoped to its container */
+/* Menu Page Styles Scoped Under .menu-page */
+.menu-page {
+    background-image: none;
+    background-color: whitesmoke;
+    display: flex; /* Flexbox to arrange sidebar and content */
+}
+
+/* Sidebar Navigation */
+.menu-page .sidebar {
+    background-color: #2c3e50;
+    width: 250px;
+    padding: 20px;
+    
+    color: white;
+    position:fixed; /* Fixes the sidebar to the left */
+    top: 0;
+    bottom: 0;
+    overflow-y: auto; /* Adds scroll if content overflows */
+}
+
+.menu-page .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.menu-page .sidebar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.menu-page .sidebar nav a:hover {
+    background-color: #34495e;
+}
+
+/* Search Bar in Sidebar */
+.menu-page .search-container {
+    margin-top: 20px;
+}
+
+.menu-page .search-input {
+    padding: 10px;
+    width: calc(100% - 22px); /* Adjusts width considering padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.menu-page .search-button {
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 100%; /* Makes button full width */
+}
+
+.menu-page .search-button:hover {
+    background-color: #27ae60;
+}
+
+/* Main Content */
+.menu-page .content {
+    margin-left: 290px; /* Adds margin to accommodate the fixed sidebar */
+  
+    flex: 1; /* Takes the remaining space */
+    
+}
+
+.menu-page .hero-section {
+    background-color: #2c3e50;
+    text-align: center;
+    color: white;
+    width: 1020px;
+    
+  
+    padding: 0 20px;
+    
+}
+
+.menu-page .hero-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.menu-page .hero-subtitle {
+    font-size: 1.5rem;
+}
+
+.menu-page .message-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.menu-page .alert {
+    padding: 10px;
+    background-color: #a11818;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.menu-page .alert .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.menu-page .menu-category {
+    margin: 40px 0;
+}
+
+.menu-page .category-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Flexbox layout for menu items */
+.menu-page .menu-items {
+    display: flex;
+    flex-wrap: wrap; /* Wraps items to the next line if necessary */
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu-page .menu-item {
+    background-color: #3f3d3d;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for menu items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-page .menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-page .item-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.menu-page .item-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #d7d1d1;
+}
+
+.menu-page .item-description {
+    font-size: 0.9rem;
+    color: #bbbbbb;
+    margin-bottom: 10px;
+}
+
+.menu-page .item-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.menu-page .purchase-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.menu-page .purchase-button:hover {
+    background-color: #c0392b;
+}
+
+.menu-page .not-available {
+    font-size: 0.9rem;
+    color: #e74c3c;
+    font-weight: bold;
+}

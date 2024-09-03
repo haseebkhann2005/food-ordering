@@ -1,0 +1,115 @@
+/* Review Page Styling */
+.review-page {
+    padding: 2rem;
+    background-color: #f9f9f9; /* Slightly different light background for better contrast */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem; /* Increased font size for emphasis */
+    color: #fff;
+    background-color: #2c3e50; /* Darker background for section titles */
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Add Review Form Container */
+.add-review-form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Add Review Form */
+.add-review-form .form-group {
+    margin-bottom: 1.5rem; /* Increased spacing */
+}
+
+.add-review-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold; /* Bold labels */
+}
+
+.add-review-form input, .add-review-form textarea, .add-review-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #2c3e50; /* Dark background for buttons */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem; /* Consistent button font size */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.submit-btn:hover {
+    background-color: #34495e; /* Darker shade for hover effect */
+}
+
+/* Review Cards Grid */
+.review-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Increased gap between cards */
+}
+
+/* Review Card */
+.review-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1.5rem; /* Increased padding */
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s; /* Smooth card hover effect */
+}
+
+.review-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.review-card .reviewer-name {
+    font-size: 1.5rem; /* Slightly larger font size */
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.review-card .review-rating {
+    margin-bottom: 0.5rem;
+}
+
+.star {
+    font-size: 1.5rem; /* Slightly larger star size */
+    color: #f39c12; /* Gold color for stars */
+}
+
+.full-star {
+    color: #f39c12; /* Gold color for full stars */
+}
+
+.empty-star {
+    color: #ccc; /* Gray color for empty stars */
+}
+
+.review-card .review-text {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.review-card .review-date {
+    font-size: 0.875rem;
+    color: #999;
+}
