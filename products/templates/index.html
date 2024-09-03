@@ -15,7 +15,7 @@
 <!-- Featured Section -->
 <section id="menu" class="featured-section">
     <center>
-    <h2 style="background-color:#1b5e20;width:420px;">Our Featured Dishes</h2>
+    <h2 >Our Featured Dishes</h2>
     </center>
     <div class="dishes-grid">
         <div class="dish-card">
@@ -58,4 +58,31 @@
     <h2>About Us</h2>
     <p>At FoodExpress, we are passionate about delivering fresh, tasty, and healthy meals right to your doorstep. Our chefs use only the finest ingredients to prepare a variety of dishes that cater to all tastes.</p>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dishCards = document.querySelectorAll('.dish-card');
+        
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    
+        function handleScroll() {
+            dishCards.forEach(card => {
+                const dishInfo = card.querySelector('.dish-info');
+                if (isInViewport(card)) {
+                    dishInfo.classList.add('in-view');
+                }
+            });
+        }
+    
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check on load
+    });
+</script>    
 {% endblock %}

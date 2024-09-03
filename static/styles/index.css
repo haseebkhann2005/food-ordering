@@ -122,7 +122,18 @@
    color: #000; /* Light text color for readability */
    margin: 10px 0;
 }
+/* Default state for dish-info */
+.dish-info {
+   opacity: 0;
+   transform: translateY(20px); /* Start slightly lower */
+   transition: opacity 0.9s ease-in-out, transform 0.9s ease-in-out; /* Smooth transition */
+}
 
+/* State when in view */
+.dish-info.in-view {
+   opacity: 2;
+   transform: translateY(0); /* Move to the normal position */
+}
 
 
 /* About Us Section Styles */
@@ -144,4 +155,164 @@
    max-width: 800px;
    margin: 0 auto;
    font-size: 1.2rem;
+}
+@media only screen and (max-width: 768px){
+   .hero-section {
+      /* Path to your background image */
+     background-size: cover; /* Ensures the background covers the entire section */
+     background-position: center; /* Centers the background image */
+     background-repeat: no-repeat; /* Prevents repeating the background image */
+     height: 100vh; /* Full viewport height */
+     display: flex;
+     align-items: center; /* Vertically centers the content */
+     justify-content: center; /* Horizontally centers the content */
+     color: #fff; /* White text color for contrast */
+     text-align: center; /* Centers the text within the hero section */
+     position: relative; /* Allows for potential overlay effects */
+  }
+  
+  .hero-section::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+     z-index: 1; /* Places the overlay below the content */
+  }
+  
+  .hero-content {
+     position: relative;
+     z-index: 2; /* Ensures content is above the overlay */
+  }
+  
+  .hero-content h1 {
+     font-size: 3rem; /* Large heading size */
+     margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+     font-size: 1.5rem;
+     margin-bottom: 30px;
+  }
+  
+  .order-now {
+     padding: 15px 30px;
+     background-color: #1b5e20;
+     color: white;
+     text-decoration: none;
+     border-radius: 5px;
+     font-size: 1.2rem;
+     transition: background-color 0.3s ease;
+  }
+  
+  .order-now:hover {
+     background-color: #219150; /* Darker green on hover */
+  }
+  
+  /* Featured Section Styles */
+  .featured-section {
+     padding: 50px 20px;
+     background-color:rgba(0, 0, 0, 0.5); /* Darker background for a more modern look */
+  }
+  
+  .featured-section h2 {
+     text-align: center;
+     font-size: 2.5rem;
+     margin: 40px; /* Slightly reduced margin for balance */
+     color: white; /* Slightly brighter green for better contrast */
+  }
+  
+  .dishes-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 25px; /* Increased gap for better spacing */
+  }
+  
+  .dish-card {
+     background-color: white; /* Darker card background to match the section */
+     border-radius: 12px; /* Slightly increased border radius for smoother edges */
+     overflow: hidden;
+     text-align: center;
+     padding: 15px; /* Increased padding for a bit more breathing space */
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 400px; /* Slightly increased height for more content space */
+     box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Deeper shadow for a more pronounced effect */
+     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+  }
+  
+  .dish-card:hover {
+     transform: translateY(-10px); /* Lift the card slightly on hover */
+     box-shadow: 0 10px 20px rgba(1, 243, 73, 0.4); /* Intensify shadow on hover */
+  }
+  
+  .dish-card img {
+     width: 100%;
+     height: 220px; /* Slightly increased height for images */
+     object-fit: cover;
+     border-radius: 8px; /* Smaller border radius for the image */
+     transition: transform 0.5s ease; /* Added smooth rotation effect on hover */
+  }
+  
+  
+  
+  .dish-card h3 {
+     margin-top: 20px; /* Increased margin for spacing */
+     font-size: 1.6rem; /* Slightly larger font size */
+     color: #07e307;
+  }
+  
+  .dish-info {
+     opacity: 0;
+     transition: opacity 0.5s ease-in-out; /* Smooth transition for text appearance */
+     transform: translateY(10px); /* Initial offset for a slight lift effect */
+  }
+  
+  .dish-card:hover .dish-info {
+     opacity: 1;
+     transform: translateY(0); /* Reset the transform on hover */
+  }
+  
+  .dish-info p {
+     font-size: 1rem;
+     color: #000; /* Light text color for readability */
+     margin: 10px 0;
+  }
+  /* Default state for dish-info */
+.dish-info {
+   opacity: 0;
+   transform: translateY(20px); /* Start slightly lower */
+   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* State when in view */
+.dish-info.in-view {
+   opacity: 1;
+   transform: translateY(0); /* Move to the normal position */
+}
+  
+  
+  /* About Us Section Styles */
+  .about-section {
+     padding: 50px 20px;
+     background-color: rgb(239, 232, 232);
+  }
+  
+  .about-section h2 {
+     text-align: center;
+     font-size: 2.5rem;
+     color: #3f630c;
+     margin-bottom: 20px;
+  }
+  
+  .about-section p {
+     color: #000;
+     text-align: center;
+     max-width: 800px;
+     margin: 0 auto;
+     font-size: 1.2rem;
+  }
 }
