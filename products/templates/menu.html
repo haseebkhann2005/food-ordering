@@ -3,7 +3,7 @@
 {% block food %}
 <div class="menu-page">
     <!-- Sidebar Navigation -->
-    <aside class="sidebar">
+    <aside class="menu-sidebar">
         <h2>Menu</h2>
         <nav>
             <a href="#appetizers">Appetizers</a>
@@ -11,57 +11,57 @@
             <a href="#desserts">Desserts</a>
         </nav>
         <!-- Search Bar in Sidebar -->
-        <div class="search-container">
+        <div class="menu-search-container">
             <form method="get">
-                <input type="text" placeholder="Search..." name="search" class="search-input">
-                <button type="submit" class="search-button">Search</button>
+                <input type="text" placeholder="Search..." name="search" class="menu-search-input">
+                <button type="submit" class="menu-search-button">Search</button>
             </form>
         </div>
     </aside>
 
     <!-- Main Content -->
-    <div class="content">
+    <div class="menu-content">
         <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <h1 class="hero-title">Our Menu</h1>
-                <p class="hero-subtitle">Discover our delicious offerings</p>
+        <section class="menu-hero-section">
+            <div class="menu-container">
+                <h1 class="menu-hero-title">Our Menu</h1>
+                <p class="menu-hero-subtitle">Discover our delicious offerings</p>
             </div>
         </section>
 
         <!-- Alert Messages -->
         {% if messages %}
-            <div class="message-container">
-                {% for message in messages %}
-                    <div class="alert {% if message.tags %}message-{{ message.tags }}{% endif %}">
-                        <span>{{ message }}</span>
-                        <button class="close" onclick="this.parentElement.style.display='none';">&times;</button>
-                    </div>
-                {% endfor %}
+        <div class="menu-message-container">
+            {% for message in messages %}
+            <div class="menu-alert {% if message.tags %}menu-message-{{ message.tags }}{% endif %}">
+                <span>{{ message }}</span>
+                <button class="menu-close" onclick="this.parentElement.style.display='none';">&times;</button>
             </div>
+            {% endfor %}
+        </div>
         {% endif %}
 
         <!-- Menu Categories -->
         <section class="menu-section">
-            <div class="container">
+            <div class="menu-container">
 
                 <!-- Search Results -->
                 {% if search_results %}
                 <div class="menu-category">
-                    <h2 class="category-title">Search Results</h2>
-                    <div class="menu-items grid-container">
+                    <h2 class="menu-category-title">Search Results</h2>
+                    <div class="menu-items menu-grid-container">
                         {% for item in search_results %}
                         <div class="menu-item">
-                            <div class="item-image">
+                            <div class="menu-item-image">
                                 <img src="{{ item.images.first.pr_images.url }}" alt="{{ item.pr_name }}">
                             </div>
-                            <h3 class="item-name">{{ item.pr_name }}</h3>
-                            <p class="item-description">{{ item.pr_desc|truncatechars:50 }}</p>
-                            <span class="item-price">${{ item.pr_price }}</span>
+                            <h3 class="menu-item-name">{{ item.pr_name }}</h3>
+                            <p class="menu-item-description">{{ item.pr_desc|truncatechars:50 }}</p>
+                            <span class="menu-item-price">${{ item.pr_price }}</span>
                             {% if item.available %}
-                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="purchase-button">Buy Now</a>
+                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="menu-purchase-button">Buy Now</a>
                             {% else %}
-                            <span class="not-available">Not Available</span>
+                            <span class="menu-not-available">Not Available</span>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -71,20 +71,20 @@
 
                 <!-- Appetizers Section -->
                 <div id="appetizers" class="menu-category">
-                    <h2 class="category-title">Appetizers</h2>
-                    <div class="menu-items grid-container">
+                    <h2 class="menu-category-title">Appetizers</h2>
+                    <div class="menu-items menu-grid-container">
                         {% for item in appetizers %}
                         <div class="menu-item">
-                            <div class="item-image">
+                            <div class="menu-item-image">
                                 <img src="{{ item.images.first.pr_images.url }}" alt="{{ item.pr_name }}">
                             </div>
-                            <h3 class="item-name">{{ item.pr_name }}</h3>
-                            <p class="item-description">{{ item.pr_desc|truncatechars:50 }}</p>
-                            <span class="item-price">${{ item.pr_price }}</span>
+                            <h3 class="menu-item-name">{{ item.pr_name }}</h3>
+                            <p class="menu-item-description">{{ item.pr_desc|truncatechars:50 }}</p>
+                            <span class="menu-item-price">${{ item.pr_price }}</span>
                             {% if item.available %}
-                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="purchase-button">Buy Now</a>
+                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="menu-purchase-button">Buy Now</a>
                             {% else %}
-                            <span class="not-available">Not Available</span>
+                            <span class="menu-not-available">Not Available</span>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -93,20 +93,20 @@
 
                 <!-- Main Courses Section -->
                 <div id="main-course" class="menu-category">
-                    <h2 class="category-title">Main Courses</h2>
-                    <div class="menu-items grid-container">
+                    <h2 class="menu-category-title">Main Courses</h2>
+                    <div class="menu-items menu-grid-container">
                         {% for item in main_courses %}
                         <div class="menu-item">
-                            <div class="item-image">
+                            <div class="menu-item-image">
                                 <img src="{{ item.images.first.pr_images.url }}" alt="{{ item.pr_name }}">
                             </div>
-                            <h3 class="item-name">{{ item.pr_name }}</h3>
-                            <p class="item-description">{{ item.pr_desc|truncatechars:50 }}</p>
-                            <span class="item-price">${{ item.pr_price }}</span>
+                            <h3 class="menu-item-name">{{ item.pr_name }}</h3>
+                            <p class="menu-item-description">{{ item.pr_desc|truncatechars:50 }}</p>
+                            <span class="menu-item-price">${{ item.pr_price }}</span>
                             {% if item.available %}
-                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="purchase-button">Buy Now</a>
+                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="menu-purchase-button">Buy Now</a>
                             {% else %}
-                            <span class="not-available">Not Available</span>
+                            <span class="menu-not-available">Not Available</span>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -115,20 +115,20 @@
 
                 <!-- Desserts Section -->
                 <div id="desserts" class="menu-category">
-                    <h2 class="category-title">Desserts</h2>
-                    <div class="menu-items grid-container">
+                    <h2 class="menu-category-title">Desserts</h2>
+                    <div class="menu-items menu-grid-container">
                         {% for item in desserts %}
                         <div class="menu-item">
-                            <div class="item-image">
+                            <div class="menu-item-image">
                                 <img src="{{ item.images.first.pr_images.url }}" alt="{{ item.pr_name }}">
                             </div>
-                            <h3 class="item-name">{{ item.pr_name }}</h3>
-                            <p class="item-description">{{ item.pr_desc|truncatechars:50 }}</p>
-                            <span class="item-price">${{ item.pr_price }}</span>
+                            <h3 class="menu-item-name">{{ item.pr_name }}</h3>
+                            <p class="menu-item-description">{{ item.pr_desc|truncatechars:50 }}</p>
+                            <span class="menu-item-price">${{ item.pr_price }}</span>
                             {% if item.available %}
-                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="purchase-button">Buy Now</a>
+                            <a href="{% url 'purchase_item' product_id=item.pr_uuid %}" class="menu-purchase-button">Buy Now</a>
                             {% else %}
-                            <span class="not-available">Not Available</span>
+                            <span class="menu-not-available">Not Available</span>
                             {% endif %}
                         </div>
                         {% endfor %}

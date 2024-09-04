@@ -1,336 +1,238 @@
-/* Blog Page Styles */
-.blog-section {
-    padding: 60px 20px;
-    background-color: #2c3e50; /* Dark background to match the theme */
-    color: #fff; /* White text for readability */
+/* Blog CSS */
+
+/* Desktop Styles */
+@media only screen and (min-width: 769px) {
+    .blog-section {
+        padding: 40px 0;
+        background-color: #f9f9f9;
+    }
+
+    .blog-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .blog-section-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    .blog-posts {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .blog-post {
+        width: 30%;
+        margin-bottom: 40px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .blog-post:hover {
+        transform: translateY(-10px);
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .blog-content {
+        padding: 20px;
+    }
+
+    .blog-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+
+    .blog-excerpt {
+        font-size: 16px;
+        color: #7f8c8d;
+        margin-bottom: 20px;
+    }
+
+    .blog-content .read-more {
+        font-size: 14px;
+        color: #27ae60;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .blog-read-more:hover {
+        color: #219150;
+    }
+
+    .blog-submission {
+        margin-top: 60px;
+    }
+
+    .blog-form-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #2c3e50;
+        text-align: center;
+    }
+
+    .blog-form-group {
+        margin-bottom: 20px;
+      
+    }
+
+    .blog-form-group label {
+        font-size: 16px;
+        color: #2c3e50;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .blog-form-group input{
+        background-color: aquamarine;
+    }
+
+    .form-group .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        
+        border: 2px solid #ddd;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .submit-btn {
+        display: inline-block;
+        padding: 12px 20px;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #0a344e;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+    }
+
+    .blog-submit-btn:hover {
+        background-color: #219150;
+    }
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+    .blog-section {
+        padding: 20px 0;
+        background-color: #f9f9f9;
+    }
 
-.section-title {
-    text-align: center;
-    font-size: 3rem;
-    color: #8dc63f; /* Light green for titles */
-    background-color: #50555b; /* Dark background for title */
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
+    .blog-container {
+        width: 90%;
+        margin: 0 auto;
+    }
 
-.blog-posts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
+    .blog-section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #2c3e50;
+    }
 
-.blog-post {
-    background-color: #2b2b2b; /* Slightly lighter dark background for posts */
-    border-radius: 10px;
-    overflow: hidden;
-    flex: 1;
-    max-width: 350px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    .blog-posts {
+        display: block;
+    }
 
-.blog-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
+    .blog-post {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.blog-content {
-    padding: 20px;
-}
+    .blog-image img {
+        width: 100%;
+        height: auto;
+    }
 
-.blog-title {
-    font-size: 1.8rem;
-    color: #8dc63f; /* Light green for titles */
-    margin-bottom: 15px;
-}
+    .blog-content {
+        padding: 15px;
+    }
 
-.blog-excerpt {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
+    .blog-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
 
-.read-more {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #8dc63f; /* Light green background */
-    color: #fff; /* White text */
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
+    .blog-excerpt {
+        font-size: 14px;
+        color: #7f8c8d;
+        margin-bottom: 15px;
+    }
 
-.read-more:hover {
-    background-color: #7aaf3e; /* Slightly darker green on hover */
-}
+    .read-more {
+        font-size: 14px;
+        color: #27ae60;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
-.blog-submission {
-    margin-top: 40px;
-}
+    .blog-read-more:hover {
+        color: #219150;
+    }
 
-.add-blog-post {
-    background-color: #2b2b2b; /* Matching dark background */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    .blog-submission {
+        margin-top: 40px;
+    }
 
-.form-title {
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    color: #8dc63f; /* Light green for titles */
-}
+    .blog-form-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #2c3e50;
+        text-align: center;
+    }
 
-.form-group {
-    margin-bottom: 15px;
-}
+    .blog-form-group {
+        margin-bottom: 15px;
+    }
 
-.form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-}
+    .blog-form-group label {
+        font-size: 14px;
+        color: #2c3e50;
+        margin-bottom: 5px;
+        display: block;
+    }
 
-.form-control-file {
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 5px;
-}
+    .form-group .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
 
-.submit-btn {
-    background-color: #8dc63f; /* Light green background */
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-}
+    .submit-btn {
+        display: inline-block;
+        padding: 10px 18px;
+        font-size: 14px;
+        color: #ffffff;
+        background-color: #27ae60;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-.submit-btn:hover {
-    background-color: #7aaf3e; /* Slightly darker green on hover */
-}
-/* Healthy Tips Page Styles */
-.tips-section {
-    padding: 60px 20px;
-    background-color: #1c1c1c; /* Dark background to match the theme */
-    color: #fff; /* White text for readability */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 3rem;
-    color: #8dc63f; /* Light green for titles */
-    margin-bottom: 50px;
-}
-
-.tips-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.tip-item {
-    padding: 20px;
-    background-color: #2b2b2b; /* Slightly lighter dark background for items */
-    border-left: 5px solid #8dc63f; /* Light green accent border */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.tip-title {
-    font-size: 2rem;
-    color: #8dc63f; /* Light green for tip titles */
-    margin-bottom: 10px;
-}
-
-.tip-description {
-    font-size: 1.2rem;
-    color: #bbb; /* Lighter color for descriptions */
-    line-height: 1.5;
-}
-/* Top 5 Cuisines Page Styles */
-.cuisines-section {
-    padding: 60px 20px;
-    background-color: #1c1c1c; /* Dark background to match the theme */
-    color: #fff; /* White text for readability */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 3rem;
-    color: #8dc63f; /* Light green for titles */
-    margin-bottom: 50px;
-}
-
-.cuisines-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.cuisine-item {
-    display: flex;
-    align-items: center;
-    background-color: #2b2b2b; /* Slightly lighter dark background for items */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.cuisine-image {
-    width: 40%;
-    object-fit: cover;
-    height: 100%;
-}
-
-.cuisine-content {
-    padding: 20px;
-    width: 60%;
-}
-
-.cuisine-title {
-    font-size: 2rem;
-    color: #8dc63f; /* Light green for cuisine titles */
-    margin-bottom: 10px;
-}
-
-.cuisine-description {
-    font-size: 1.2rem;
-    color: #bbb; /* Lighter color for descriptions */
-    line-height: 1.5;
-}
-/* Meal Planning Guide Page Styles */
-.meal-planning-section {
-    padding: 60px 20px;
-    background-color: #1c1c1c; /* Dark background to match the theme */
-    color: #fff; /* White text for readability */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 3rem;
-    color: #8dc63f; /* Light green for titles */
-    margin-bottom: 40px;
-}
-
-.intro {
-    font-size: 1.2rem;
-    color: #bbb; /* Lighter color for intro text */
-    line-height: 1.6;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.guide {
-    font-size: 1.1rem;
-    color: #ccc; /* Light color for guide text */
-    line-height: 1.7;
-}
-
-.guide-title {
-    font-size: 2rem;
-    color: #8dc63f; /* Light green for guide titles */
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.guide p {
-    margin-bottom: 20px;
-}
-/* Form Container */
-.add-blog-post {
-    background-color: #2e2e2e; /* Dark background for form container */
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 40px;
-}
-
-.add-blog-post h2 {
-    color: #4CAF50; /* Green color for form title */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Form Group */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    color: #e6e6e6; /* Light text color */
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-/* Form Control (input, textarea) */
-.form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #4CAF50; /* Green border */
-    border-radius: 5px;
-    background-color: #3d3d3d; /* Darker background for inputs */
-    color: #e6e6e6; /* Light text color */
-    font-size: 1em;
-    outline: none;
-}
-
-.form-control:focus {
-    border-color: #66bb6a; /* Lighter green border on focus */
-    box-shadow: 0 0 8px #4CAF50; /* Green shadow on focus */
-}
-
-/* Form Control File Input */
-.form-control-file {
-    display: block;
-    margin-top: 10px;
-    color: #e6e6e6; /* Light text color */
-}
-
-/* Submit Button */
-.submit-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50; /* Green background for button */
-    border: none;
-    border-radius: 5px;
-    color: #e6e6e6; /* Light text color */
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-    background-color: #66bb6a; /* Lighter green on hover */
-}
-
-/* Additional Styling */
-textarea.form-control {
-    resize: vertical;
+    .blog-submit-btn:hover {
+        background-color: #219150;
+    }
 }

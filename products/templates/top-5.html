@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block food %}
-<section class="cuisines-section">
-    <div class="container">
-        <h1 class="section-title">Top 5 Cuisines of the World</h1>
+<section class="cuisine-section"> <!-- Changed class name -->
+    <div class="cuisine-container"> <!-- Changed class name -->
+        <h1 class="cuisine-section-title">Top 5 Cuisines of the World</h1> <!-- Changed class name -->
 
         <!-- Cuisines List -->
-        <div class="cuisines-list">
+        <div class="cuisine-list"> <!-- Changed class name -->
             <div class="cuisine-item">
                 <img src="{% static 'images/italian.jpeg' %}" alt="Italian Cuisine" class="cuisine-image">
                 <div class="cuisine-content">
