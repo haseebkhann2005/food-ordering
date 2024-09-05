@@ -7,7 +7,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="{% static 'styles/register.css' %}"> <!-- Link to your CSS file -->
 </head>
-<body class="loading-screen" style="background-image: url('{% static 'images/background1.png' %}'); background-size: cover; height: 100vh; background-position: center; background-repeat: no-repeat;">
+<body class="loading-screen" style="background-image: url('{% static 'images/background1.png' %}');">
     <!-- Loading Screen -->
     <div id="loading-screen">
         <img src="{% static 'images/loading.gif' %}" alt="Loading...">
@@ -16,7 +16,6 @@
     <!-- Main Content -->
     <div id="main-content" style="display: none;">
         <div class="auth-container">
-            
             <!-- Display alert messages -->
             {% if messages %}
                 <div class="alert-container">
@@ -28,7 +27,7 @@
                 </div>
             {% endif %}
             
-            <h1 class="auth-title">Don't have an account? Register here</h1>
+            <h1 class="auth-title">Register</h1>
             
             <form action="{% url 'p_register' %}" method="POST">
                 {% csrf_token %}
